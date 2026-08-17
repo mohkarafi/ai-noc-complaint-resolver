@@ -39,6 +39,18 @@ services:
       retries: 10
 
 
-volumes:
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minio123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - miniodata:/data
 
+volumes:
   complaint-postgres-data:
+  miniodata:

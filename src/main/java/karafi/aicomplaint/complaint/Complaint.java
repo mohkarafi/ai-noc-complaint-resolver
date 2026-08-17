@@ -45,11 +45,22 @@ public class Complaint {
     private ComplaintStatus status;
 
 
-
-    @Column(
-            nullable = false
-    )
+    @Column(nullable = false)
     private LocalDateTime createdAt;
+
+
+    @Column(name = "sentiment")
+    private String sentiment;
+
+
+    @Column(name = "probable_cause")
+    private String probableCause;
+
+    @Column(name = "confidence")
+    private Double confidence;
+
+    private String audioStorageKey;
+
     @PrePersist
     protected void onCreate() {
 

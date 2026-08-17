@@ -1,4 +1,4 @@
-package karafi.aicomplaint.api.dto;
+package karafi.aicomplaint.dto;
 
 
 import jakarta.validation.constraints.NotBlank;
